@@ -439,7 +439,7 @@ function load_default_config() {
 	ENABLE_SSHD=true
 	ENABLE_BINPKG=false
 	ROOT_SSH_AUTHORIZED_KEYS=""
-	
+
 
 	# All settings are unsaved.
 	UNSAVED_CHANGES=true
@@ -1341,11 +1341,11 @@ function SYSTEMD_INITRAMFS_SSHD_menu()  {
 function SYSTEMD_NETWORKD_INTERFACE_NAME_tag()   { echo " ├ Interface Name"; }
 function SYSTEMD_NETWORKD_INTERFACE_NAME_label() { echo " ├ ($(ellipsis 20 "$SYSTEMD_NETWORKD_INTERFACE_NAME"))"; }
 function SYSTEMD_NETWORKD_INTERFACE_NAME_show()  { [[ $STAGE3_VARIANT == *systemd* ]] && is_on "$SYSTEMD_NETWORKD"; }
-function SYSTEMD_NETWORKD_INTERFACE_NAME_help()  { echo "The network interface(s) to configure. Defaults to all interfaces matching en*."; }
+function SYSTEMD_NETWORKD_INTERFACE_NAME_help()  { echo "The network interface(s) to configure. Defaults to all interfaces matching en*. Accepts a whitespace-separated list of shell-style globs matching the device name. To edit after install, edit /etc/systemd/network/20-wired.network. Also see https://www.man7.org/linux/man-pages/man5/systemd.network.5.html."; }
 function SYSTEMD_NETWORKD_INTERFACE_NAME_menu()  {
 	dialog \
 		--title "Network Interface Name" \
-		--inputbox "Enter the network interface name which should be configured. Can include wildcards." \
+    --inputbox "Enter the network interface name which should be configured. (Whitespace separated, can include wildcards)" \
 		"${INPUTBOX_SIZE[@]}" "$SYSTEMD_NETWORKD_INTERFACE_NAME" \
 		|| return 0
 	SYSTEMD_NETWORKD_INTERFACE_NAME="$dialog_out"

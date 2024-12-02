@@ -4,10 +4,13 @@ This project aspires to be your favourite way to install gentoo.
 It aims to provide a smooth installation experience, both for beginners and experts.
 You may configure it by using a menuconfig-inspired interface or simply via a config file.
 
+It installs a base system with a single user (root) and no window system.
+
 It supports the most common disk layouts, different file systems like ext4, ZFS and btrfs as well
 as additional layers such as LUKS or mdraid. It also supports both EFI (recommended) and BIOS boot,
 and can be used with systemd or OpenRC as the init system. SSH can also be configured to allow using an automation framework
 like [Ansible](https://github.com/ansible/ansible) or [Fora](https://github.com/oddlama/fora) to automate beyond system installation.
+
 
 [Usage](#usage) |
 [Overview](#overview) |

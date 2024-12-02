@@ -287,7 +287,7 @@ SELECT_MIRRORS_LARGE_FILE=false
 # Additional (optional) configuration
 
 # Array of additional packages to install
-# e.g. ADDITIONAL_PACKAGES=("app-editors/neovim")
+# e.g. ADDITIONAL_PACKAGES=("app-editors/neovim" "net-wireless/iwd")
 ADDITIONAL_PACKAGES=()
 
 # Install and configure sshd (a reasonably secure config is provided, which
